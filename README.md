@@ -1,6 +1,6 @@
 # Nao esquecer:#
 
-- crasha quando vamos aos Settings, fazemos save e depois Subjects
+- problema: os arrays têm de ser temporarios, só no save é que passam para o objeto
 
 - delete de subjects -> quando criar o edit
 
