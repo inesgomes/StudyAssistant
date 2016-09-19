@@ -58,13 +58,13 @@ public class SubjectCreator extends AppCompatActivity {
 
         //spiner para escolher o semestre a que esta cadeira pertence
         spinnerTerm = (Spinner) findViewById(R.id.termSpinner);
-        adapterTerm = new ArrayAdapter<Epoch>(SubjectCreator.this, android.R.layout.simple_list_item_1, schoolYear.getTerms() );
+        adapterTerm = new ArrayAdapter<Epoch>(SubjectCreator.this, android.R.layout.simple_spinner_item, schoolYear.getTerms());
         adapterTerm.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerTerm.setAdapter(adapterTerm);
 
         //spiner para escolher a cor da cadeira
         spinnerColor = (Spinner) findViewById(R.id.colorSpinner);
-        adapterColor = new ArrayAdapter<String>(SubjectCreator.this, android.R.layout.simple_list_item_1, colors );
+        adapterColor = new ArrayAdapter<String>(SubjectCreator.this, android.R.layout.simple_spinner_item, colors );
         adapterColor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerColor.setAdapter(adapterColor);
 
