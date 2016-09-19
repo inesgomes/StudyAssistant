@@ -1,6 +1,7 @@
 # Nao esquecer:#
 
 - display das cadeiras trocado, às vezes
+- crasha quando vamos aos Settings, fazemos save e depois Subjects
 
 - delete de subjects -> quando criar o edit
 
