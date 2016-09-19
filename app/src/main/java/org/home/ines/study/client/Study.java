@@ -28,7 +28,6 @@ public class Study extends AppCompatActivity
 
     private final int REQUEST_CODE = 1;
     private User user;
-    private boolean isNew;
 
     private Menu myMenu;
     private MenuItem name;
@@ -44,7 +43,6 @@ public class Study extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         user = new User();
-        isNew = true;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study);
@@ -74,7 +72,7 @@ public class Study extends AppCompatActivity
         subjects.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(isNew){
+                if(user.getAllYears().size() == 0){
                     AlertDialog.Builder builder = new AlertDialog.Builder(Study.this);
                     builder.setMessage("You can not continue until you fill out the school year. First, go to settings.")
                             .setCancelable(true)
@@ -180,7 +178,6 @@ public class Study extends AppCompatActivity
                 populateFields();
                 if(user.getAllYears().size() != 0) //so executa quando existem anos letivos
                     year.setTitle(user.getAllYears().get(user.getCurrentYear()).toString());
-                isNew = false;
             }if(data.hasExtra("schoolyear_1")){
                 user.update((SchoolYear) data.getExtras().getParcelable("schoolyear_1"));
             }

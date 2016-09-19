@@ -41,11 +41,8 @@ public class SubjectList extends AppCompatActivity implements AdapterView.OnItem
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjectlist);
 
-        if (getIntent().hasExtra("schoolyear_1")) {
+        if (getIntent().hasExtra("schoolyear_1"))
             schoolYear = (SchoolYear) getIntent().getExtras().getParcelable("schoolyear_1");
-            Log.d("aqui","primeiro");
-        }else
-            Log.d("aqui","segunda");
         //else cria uma excecao
 
         //spinner
@@ -56,7 +53,6 @@ public class SubjectList extends AppCompatActivity implements AdapterView.OnItem
         spinner.setSelection(options.size()-1);
 
         subjectList = (ListView) findViewById(R.id.listSubject);
-        Log.d("name1",spinner.getSelectedItem().toString());
         updateAdapter(toPosition(spinner.getSelectedItem().toString()));
         subjectList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -81,7 +77,6 @@ public class SubjectList extends AppCompatActivity implements AdapterView.OnItem
         if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
             if (data.hasExtra("schoolyear_2")) {
                 schoolYear = data.getExtras().getParcelable("schoolyear_2");
-                Log.d("name3",spinner.getSelectedItem().toString());
                 updateAdapter(toPosition(spinner.getSelectedItem().toString()));
             }
         }
@@ -100,7 +95,6 @@ public class SubjectList extends AppCompatActivity implements AdapterView.OnItem
     public void updateAdapter(int position){
         if(position != options.size()-1) {
             Epoch e = schoolYear.getTerms().get(toPosition(options.get(position)));
-            Log.d("name2",e.toString());
             adapterS = new ArrayAdapter<Subject>(this, android.R.layout.simple_list_item_1, e.getSubjects());
         }else{
             ArrayList<Subject> subjects = new ArrayList<>();
@@ -119,10 +113,8 @@ public class SubjectList extends AppCompatActivity implements AdapterView.OnItem
      * @return
      */
     public int toPosition(String selectedItem) {
-        Log.d("Name1aux",selectedItem);
         ArrayList<Epoch> terms = schoolYear.getTerms();
         for(int i = 0; i < terms.size(); i++){
-            Log.d("Name2aux",terms.get(i).getName());
             if(terms.get(i).getName().equals(selectedItem))
                 return i;
         }
