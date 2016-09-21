@@ -13,7 +13,8 @@ public class Subject implements Parcelable{
     private String name;
     private int ects;   // só se o ano letivo estiver a true.
     private ArrayList<Schedule> schedules = new ArrayList<>();
-    private ArrayList<Task> tasks = new ArrayList<>();
+    private ArrayList<Evaluation> evaluations = new ArrayList<>();
+
 
     public Subject(){
         setName("Name");
@@ -46,6 +47,8 @@ public class Subject implements Parcelable{
 
     public ArrayList<Schedule> getSchedule() { return schedules; }
 
+    public ArrayList<Evaluation> getEvaluations() { return evaluations; }
+
     /**
      * Nome da disciplina
      * @return
@@ -60,7 +63,7 @@ public class Subject implements Parcelable{
         color = in.readString();
         ects = in.readInt();
         schedules = in.readArrayList(Schedule.class.getClassLoader());
-        tasks = in.readArrayList(Task.class.getClassLoader());
+        evaluations = in.readArrayList(Evaluation.class.getClassLoader());
     }
 
     public static final Parcelable.Creator<Subject> CREATOR = new Parcelable.Creator<Subject>(){
@@ -84,6 +87,6 @@ public class Subject implements Parcelable{
         dest.writeString(color);
         dest.writeInt(ects);
         dest.writeList(schedules);
-        dest.writeList(tasks);
+        dest.writeList(evaluations);
     }
 }

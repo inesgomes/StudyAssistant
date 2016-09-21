@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import org.home.ines.study.R;
 import org.home.ines.study.client.Study;
+import org.home.ines.study.logic.Evaluation;
 import org.home.ines.study.logic.Schedule;
 import org.home.ines.study.logic.SchoolYear;
 import org.home.ines.study.logic.Subject;
@@ -24,7 +25,7 @@ public class SubjectView extends AppCompatActivity {
     private Subject subject;
     private TextView name;
     private ListView evaluationList;
-    //private ArrayAdapter<Evaluation> adapterE;
+    private ArrayAdapter<Evaluation> adapterE;
     private ListView scheduleList;
     private ArrayAdapter<Schedule> adapterS;
     private Button addEvaluation;
@@ -45,6 +46,15 @@ public class SubjectView extends AppCompatActivity {
         name.setText(subject.getName());
 
         //lista das avaliacoes ---> fazer depois
+        evaluationList = (ListView) findViewById(R.id.evalutionList);
+        adapterE = new ArrayAdapter<Evaluation>(this, android.R.layout.simple_list_item_1, subject.getEvaluations());
+        evaluationList.setAdapter(adapterE);
+        evaluationList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+               // abre uma caixa de dialogo
+            }
+        });
 
         addEvaluation = (Button) findViewById(R.id.addEvaluation);
         addEvaluation.setOnClickListener(new View.OnClickListener() {
