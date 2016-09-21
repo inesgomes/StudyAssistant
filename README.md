@@ -7,6 +7,7 @@
 	* acrescentar atividade dos horarios
 	* acrescentar atividade das avaliacoes
 
+
 - botão delete inativo no caso de não ser uma modificação
 - verificar que as datas finais devem ser maiores que as datas inicias -> com caixa de dialogo
 - criar excecoes
