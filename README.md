@@ -1,7 +1,5 @@
 # Nao esquecer:#
 
-- problema: save envia um user, cancel envia o user antigo -> nao funciona
-
 - delete de subjects -> quando criar o edit
 
 - botão delete inativo no caso de não ser uma modificação
