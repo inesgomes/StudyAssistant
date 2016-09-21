@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import android.support.v7.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 
 import android.widget.AdapterView;
@@ -20,12 +21,18 @@ import org.home.ines.study.client.Study;
 import org.home.ines.study.logic.SchoolYear;
 import org.home.ines.study.logic.User;
 
+import java.util.ArrayList;
+
 
 /**
  * Created by Inês Gomes on 16/07/2016.
  *
  * FALTA
  * - excecao para o caso de nao receber um User
+ *
+ * IDEIA
+ * - sempre que existe um novo SchoolYear colocar num vetor privado (pode ser só com os nomes, ou id's).
+ * - Se fizermos cancel, todos os anos escolares desse vetor têm de ser eliminados do User.
  */
 public class Setting extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private EditText nameTxt;
@@ -39,6 +46,8 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     ArrayAdapter<SchoolYear> adapter ;
 
     private User u;
+    private User oldUser;
+    private boolean cancel;
     private final int REQUEST_CODE = 1;
 
     /**
@@ -50,10 +59,14 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        if(getIntent().hasExtra("user"))
+        cancel = false;
+
+        if(getIntent().hasExtra("user")) {
+            oldUser = getIntent().getExtras().getParcelable("user");
             u = getIntent().getExtras().getParcelable("user");
-        else
-            u = new User(); // deve criar uma excecao
+            Log.d("aaaaa","chegou");
+        }//else
+           // u = new User(); // deve criar uma excecao
 
         //EditText (compor o layout)
         nameTxt = (EditText)findViewById(R.id.nameText);
@@ -109,6 +122,7 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         cancelBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                cancel = true;
                 onBackPressed();
             }
         });
@@ -140,7 +154,13 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     @Override
     public void finish() {
         Intent data = new Intent(this, Study.class);
-        data.putExtra("user", u);
+        if(cancel) {
+            Log.d("aaaaa","cancel");
+            data.putExtra("user", oldUser);
+        }else {
+            Log.d("aaaaa","save");
+            data.putExtra("user", u);
+        }
         setResult(RESULT_OK, data);
         super.finish();
     }
