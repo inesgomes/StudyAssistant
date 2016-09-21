@@ -1,12 +1,15 @@
 # Nao esquecer:#
 
-- delete de subjects -> quando criar o edit
+- SubjectList : onActivityResult() 
+- SubjectView : 
+	* lista de avaliacoes ( com dialogo ) => criar objecto Evaluation
+	* botao editar => SubjectCreator : colocar coisas para poder editar e botao delete
+	* acrescentar atividade dos horarios
+	* acrescentar atividade das avaliacoes
 
 - botão delete inativo no caso de não ser uma modificação
 - verificar que as datas finais devem ser maiores que as datas inicias -> com caixa de dialogo
 - criar excecoes
-
-- eventualmente, verificar se não há uma maneira mais pratica de por os displays dos semestres no SubjectList mais simples.
 
 # ////////////////////////////////////////////////////////////////////////////////////////// #
 para se algum dia precisar
