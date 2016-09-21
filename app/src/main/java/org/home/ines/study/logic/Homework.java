@@ -1,12 +1,10 @@
 package org.home.ines.study.logic;
 
-
 import java.util.Calendar;
 
 /**
  * Created by Inês Gomes on 17/07/2016.
  */
-public class Exam extends Evaluation{
-    private Calendar endHour;
-    private String classroom;
+public class Homework extends Evaluation{
+
 }
