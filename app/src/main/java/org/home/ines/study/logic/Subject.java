@@ -44,6 +44,8 @@ public class Subject implements Parcelable{
         this.ects = ects;
     }
 
+    public ArrayList<Schedule> getSchedule() { return schedules; }
+
     /**
      * Nome da disciplina
      * @return

@@ -57,7 +57,9 @@ public class SubjectList extends AppCompatActivity implements AdapterView.OnItem
         subjectList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //vai para uma activity que permite ver as disciplinas -> SubjectView -> envia o subject
+                Intent i = new Intent(SubjectList.this, SubjectView.class);
+                i.putExtra("subject", adapterS.getItem(position));
+                startActivityForResult(i, REQUEST_CODE);
             }
         });
 
@@ -78,6 +80,8 @@ public class SubjectList extends AppCompatActivity implements AdapterView.OnItem
             if (data.hasExtra("schoolyear_2")) {
                 schoolYear = data.getExtras().getParcelable("schoolyear_2");
                 updateAdapter(toPosition(spinner.getSelectedItem().toString()));
+            }if(data.hasExtra("subject")){
+                //procura o subject na lista de subjects, elimina o que está nessa lista e põe este
             }
         }
         super.onActivityResult(requestCode, resultCode, data);

@@ -3,4 +3,63 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/subjectName"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/evalutionList"
+            android:layout_below="@+id/subjectName"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add evaluation "
+            android:id="@+id/addEvaluation"
+            android:layout_below="@+id/evalutionList"
+            android:layout_toLeftOf="@+id/subjectName"
+            android:layout_toStartOf="@+id/subjectName" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/scheduleList"
+            android:layout_below="@+id/addEvaluation"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="50dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Schedule"
+            android:id="@+id/addSchedule"
+            android:layout_below="@+id/scheduleList"
+            android:layout_alignLeft="@+id/addEvaluation"
+            android:layout_alignStart="@+id/addEvaluation" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Subject"
+            android:id="@+id/editBtn"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/addSchedule"
+            android:layout_alignStart="@+id/addSchedule" />
+
+    </RelativeLayout>
 </LinearLayout>
