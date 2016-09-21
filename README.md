@@ -1,6 +1,6 @@
 # Nao esquecer:#
 
-- problema: os arrays têm de ser temporarios, só no save é que passam para o objeto
+- problema: save envia um user, cancel envia o user antigo -> nao funciona
 
 - delete de subjects -> quando criar o edit
 
