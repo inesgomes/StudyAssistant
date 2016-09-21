@@ -97,17 +97,6 @@
                 android:layout_marginRight="77dp"
                 android:layout_marginEnd="77dp" />
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cancel"
-                android:id="@+id/cancelBtn"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="54dp"
-                android:layout_marginStart="54dp" />
-
         </RelativeLayout>
 
     </GridLayout>

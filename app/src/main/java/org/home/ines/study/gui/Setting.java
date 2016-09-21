@@ -39,15 +39,12 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     private EditText collegeTxt;
     private EditText courseTxt;
     private Button saveBtn;
-    private Button cancelBtn;
     private Button addYear;
     private ListView list;
     private Spinner spinner;
     ArrayAdapter<SchoolYear> adapter ;
 
     private User u;
-    private User oldUser;
-    private boolean cancel;
     private final int REQUEST_CODE = 1;
 
     /**
@@ -59,12 +56,9 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        cancel = false;
 
         if(getIntent().hasExtra("user")) {
-            oldUser = getIntent().getExtras().getParcelable("user");
             u = getIntent().getExtras().getParcelable("user");
-            Log.d("aaaaa","chegou");
         }//else
            // u = new User(); // deve criar uma excecao
 
@@ -117,15 +111,6 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
                 finish();
             }
         });
-
-        cancelBtn = (Button)findViewById(R.id.cancelBtn);
-        cancelBtn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                cancel = true;
-                onBackPressed();
-            }
-        });
     }
 
     /**
@@ -154,13 +139,7 @@ public class Setting extends AppCompatActivity implements AdapterView.OnItemSele
     @Override
     public void finish() {
         Intent data = new Intent(this, Study.class);
-        if(cancel) {
-            Log.d("aaaaa","cancel");
-            data.putExtra("user", oldUser);
-        }else {
-            Log.d("aaaaa","save");
-            data.putExtra("user", u);
-        }
+        data.putExtra("user", u);
         setResult(RESULT_OK, data);
         super.finish();
     }

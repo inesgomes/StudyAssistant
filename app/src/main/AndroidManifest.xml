@@ -46,6 +46,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".gui.SubjectView">
+            <intent-filter>
+                <action android:name="org.home.ines.SubjectView" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
