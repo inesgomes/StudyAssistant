@@ -52,7 +52,7 @@ public class SubjectView extends AppCompatActivity {
         evaluationList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-               // abre uma caixa de dialogo
+               // abre uma caixa de dialogo com uma list View
             }
         });
 
