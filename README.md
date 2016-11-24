@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nao esquecer:#
 
 - SubjectList : onActivityResult() 
@@ -32,3 +33,7 @@ para se algum dia precisar
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_study"
         app:menu="@menu/activity_study_drawer" />
+=======
+# StudyAssistant
+Android App designed to help students organize their lives.
+>>>>>>> 615e97f26863574c3996ab17307c7b77af3cd000
