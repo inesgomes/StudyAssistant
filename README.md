@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Nao esquecer:#
+## Nao esquecer:##
 
 - SubjectList : onActivityResult() 
 - SubjectView : 
@@ -13,7 +12,7 @@
 - verificar que as datas finais devem ser maiores que as datas inicias -> com caixa de dialogo
 - criar excecoes
 
-# ////////////////////////////////////////////////////////////////////////////////////////// #
+### /////////////////////////////////////////////////////////////////////////////////////// ###
 para se algum dia precisar
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -33,7 +32,3 @@ para se algum dia precisar
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_study"
         app:menu="@menu/activity_study_drawer" />
-=======
-# StudyAssistant
-Android App designed to help students organize their lives.
->>>>>>> 615e97f26863574c3996ab17307c7b77af3cd000
